@@ -1,751 +1,341 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio SIP | Agnieszka Pawlaczek</title>
+  <title>Portfolio | Data Analyst / BI Developer</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
-
-    body{
-      background:#0f172a;
-      color:white;
-      display:flex;
-      min-height:100vh;
-    }
-
-    .sidebar{
-      width:280px;
-      background:#111827;
-      padding:40px 25px;
-      border-right:1px solid rgba(255,255,255,0.08);
-      position:fixed;
-      height:100%;
-      overflow:auto;
-    }
-
-    .profile{
-      text-align:center;
-      margin-bottom:40px;
-    }
-
-    .profile img{
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      object-fit:cover;
-      border:4px solid #38bdf8;
-      margin-bottom:15px;
-    }
-
-    .profile h1{
-      font-size:24px;
-      margin-bottom:8px;
-    }
-
-    .profile p{
-      color:#94a3b8;
-      font-size:14px;
-      line-height:1.5;
-    }
-
-    .menu{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-
-    .menu a{
-      text-decoration:none;
-      color:white;
-      background:#1e293b;
-      padding:14px 18px;
-      border-radius:14px;
-      transition:0.3s;
-      font-weight:500;
-    }
-
-    .menu a:hover{
-      background:#38bdf8;
-      transform:translateX(5px);
-    }
-
-    .content{
-      margin-left:280px;
-      width:calc(100% - 280px);
-      padding:50px;
-    }
-
-    section{
-      margin-bottom:80px;
-    }
-
-    .hero{
-      background:linear-gradient(135deg,#0ea5e9,#2563eb);
-      padding:60px;
-      border-radius:28px;
-      margin-bottom:50px;
-      box-shadow:0 15px 40px rgba(0,0,0,0.35);
-    }
-
-    .hero h2{
-      font-size:48px;
-      margin-bottom:20px;
-    }
-
-    .hero p{
-      font-size:18px;
-      max-width:700px;
-      line-height:1.7;
-    }
-
-    .section-title{
-      font-size:34px;
-      margin-bottom:30px;
-      color:#38bdf8;
-    }
-
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:30px;
-    }
-
-    .card{
-      background:#1e293b;
-      border-radius:24px;
-      overflow:hidden;
-      transition:0.35s;
-      box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-    }
-
-    .card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
-
-    .card-content{
-      padding:25px;
-    }
-
-    .card-content h3{
-      font-size:24px;
-      margin-bottom:15px;
-    }
-
-    .card-content p{
-      color:#cbd5e1;
-      line-height:1.7;
-      margin-bottom:20px;
-    }
-
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .tag{
-      background:#0ea5e9;
-      padding:8px 14px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:600;
-    }
-
-    .about-box{
-      background:#1e293b;
-      padding:35px;
-      border-radius:24px;
-      line-height:1.8;
-      color:#dbeafe;
-    }
-
-    footer{
-      margin-top:100px;
-      text-align:center;
-      color:#94a3b8;
-      font-size:14px;
-    }
-
-
-    @media(max-width:900px){
-
-      body{
-        flex-direction:column;
-      }
-
-      .sidebar{
-        position:relative;
-        width:100%;
-        height:auto;
-        border-right:none;
-        border-bottom:1px solid rgba(255,255,255,0.08);
-      }
-
-      .content{
-        margin-left:0;
-        width:100%;
-        padding:30px;
-      }
-
-      .hero h2{
-        font-size:36px;
-      }
-
-    }
-    .slider{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin:15px 0;
-    }
-
-    .slider-img-wrapper{
-      width:100%;
-      height:300px;          
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#0f172a;   
-      border-radius:12px;
-      overflow:hidden;
-    }
-
-    .slider-img-wrapper img{
-      max-width:100%;
-      max-height:100%;
-      width:auto;
-      height:auto;
-      object-fit:contain;   
-    }
-
-    .slider button{
-      background:#0ea5e9;
-      border:none;
-      color:white;
-      font-size:22px;
-      width:40px;
-      height:40px;
-      border-radius:10px;
-      cursor:pointer;
-    }
-
-    .slider button:hover{
-      background:#38bdf8;
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- SIDEBAR -->
+  <!-- FIXED TOP NAVIGATION -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="nav-brand">Portfolio</div>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <div class="nav-dropdown">
+          <a href="#featured" class="nav-link" data-section="featured">Projects: Featured</a>
+          <div class="dropdown-content">
+            <a href="all-projects.html">View All Projects</a>
+          </div>
+        </div>
+        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-  <aside class="sidebar">
+  <main class="main-content">
 
-    <div class="profile">
-      <img src="./images/img.jpg" : alt="profil">
-      <h1>Agnieszka Pawlaczek</h1>
-      <p>
-        Inżynier na kierunku Geoinformatyka
-        GIS Developer | SIP <br>
-        Studentka studiów magisterkich GiK
-      </p>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-name">Your Full Name</h1>
+        <h2 class="hero-title">Data Analyst / BI Developer</h2>
+        <p class="hero-intro">
+          Passionate about transforming data into actionable insights. Experienced in building 
+          interactive dashboards, automating workflows, and delivering data-driven solutions 
+          that empower business decisions.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://github.com/yourusername" target="_blank" class="btn btn-primary">
+            <span class="btn-icon">📊</span> GitHub
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn btn-primary">
+            <span class="btn-icon">💼</span> LinkedIn
+          </a>
+          <a href="#" download class="btn btn-secondary">
+            <span class="btn-icon">📄</span> Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="about-section">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Professional Summary</h3>
+          <p>
+            Data analyst with expertise in business intelligence, data visualization, and cloud technologies. 
+            Skilled in transforming complex datasets into clear, actionable insights that drive strategic decisions.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Key Strengths</h3>
+          <ul>
+            <li>Advanced data analysis and visualization</li>
+            <li>Dashboard design and development</li>
+            <li>ETL processes and data modeling</li>
+            <li>Cloud-based analytics solutions</li>
+            <li>Cross-functional collaboration</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>Career Highlights</h3>
+          <ul>
+            <li>Developed 20+ interactive Power BI dashboards</li>
+            <li>Automated reporting processes saving 15 hours/week</li>
+            <li>Implemented Azure-based data pipelines</li>
+            <li>Led data-driven initiatives improving KPIs by 25%</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="featured" class="featured-section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="featured-grid">
+        
+        <!-- Featured Project 1 -->
+        <div class="featured-card" data-project="1">
+          <div class="featured-image">
+            <img src="./images/img.jpg" alt="Featured Project 1">
+          </div>
+          <div class="featured-content">
+            <h3>Sales Performance Dashboard</h3>
+            <p>
+              Comprehensive Power BI dashboard tracking sales metrics, regional performance, 
+              and forecasting trends. Integrated with Azure SQL Database for real-time updates.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Azure SQL</span>
+              <span class="tech-tag">DAX</span>
+              <span class="tech-tag">Power Query</span>
+            </div>
+            <button class="btn-view-project" onclick="openProjectModal(1)">View Project</button>
+          </div>
+        </div>
+
+        <!-- Featured Project 2 -->
+        <div class="featured-card" data-project="2">
+          <div class="featured-image">
+            <img src="./images/img.jpg" alt="Featured Project 2">
+          </div>
+          <div class="featured-content">
+            <h3>Customer Analytics Platform</h3>
+            <p>
+              End-to-end analytics solution for customer segmentation and behavior analysis. 
+              Built with Python and deployed on Azure with automated data pipelines.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Scikit-learn</span>
+            </div>
+            <button class="btn-view-project" onclick="openProjectModal(2)">View Project</button>
+          </div>
+        </div>
+
+        <!-- Featured Project 3 -->
+        <div class="featured-card" data-project="3">
+          <div class="featured-image">
+            <img src="./images/img.jpg" alt="Featured Project 3">
+          </div>
+          <div class="featured-content">
+            <h3>Financial Reporting Automation</h3>
+            <p>
+              Automated monthly financial reports using Excel VBA and Power Automate. 
+              Reduced manual processing time by 80% and improved accuracy.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Excel VBA</span>
+              <span class="tech-tag">Power Automate</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">SharePoint</span>
+            </div>
+            <button class="btn-view-project" onclick="openProjectModal(3)">View Project</button>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- View All Projects Button -->
+      <div class="view-all-container">
+        <a href="all-projects.html" class="btn btn-secondary btn-large">View All Projects</a>
+      </div>
+    </section>
+
+    <!-- PROJECT MODAL -->
+    <div id="projectModal" class="project-modal">
+      <div class="modal-overlay" onclick="closeProjectModal()"></div>
+      <div class="modal-card">
+        <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+        
+        <div class="modal-image-carousel">
+          <button class="carousel-btn prev" onclick="prevImage()">‹</button>
+          <img id="modalImage" src="./images/img.jpg" alt="Project Image">
+          <button class="carousel-btn next" onclick="nextImage()">›</button>
+          <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+        
+        <div class="modal-content-area">
+          <h2 id="modalTitle">Project Title</h2>
+          <p id="modalDescription">Project description goes here...</p>
+          
+          <h3>Technologies Used:</h3>
+          <div class="tech-tags" id="modalTechTags"></div>
+          
+          <h3>Key Features:</h3>
+          <ul id="modalFeatures"></ul>
+          
+          <div class="modal-actions">
+            <a href="#" id="modalLiveLink" class="btn btn-primary" target="_blank">View Live</a>
+            <a href="#" id="modalGithubLink" class="btn btn-secondary" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <nav class="menu">
-      <a href="#home">🌏 Strona główna</a>
-      <a href="#projekty">🗺 Projekty</a>
-      <a href="#umiejetnosci">💻 Umiejętności</a>
-      <a href="#omnie">👤 O mnie</a>
-      <a href="#kontakt">📩 Kontakt</a>
-    </nav>
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+      <h2 class="section-title">Skills & Technologies</h2>
+      
+      <div class="skills-grid">
+        
+        <!-- Analytics Skills -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <span class="skill-icon">📊</span> Analytics
+          </h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Power BI</span>
+            <span class="skill-badge">Excel</span>
+            <span class="skill-badge">DAX</span>
+            <span class="skill-badge">Power Query</span>
+            <span class="skill-badge">Tableau</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Statistics</span>
+            <span class="skill-badge">Data Visualization</span>
+          </div>
+        </div>
 
-  </aside>
+        <!-- Data Engineering Skills -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <span class="skill-icon">🔧</span> Data Engineering
+          </h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Pandas</span>
+            <span class="skill-badge">NumPy</span>
+            <span class="skill-badge">ETL</span>
+            <span class="skill-badge">Data Modeling</span>
+            <span class="skill-badge">PostgreSQL</span>
+            <span class="skill-badge">MySQL</span>
+            <span class="skill-badge">Data Warehousing</span>
+          </div>
+        </div>
 
-  <main class="content">
+        <!-- Cloud & Development Skills -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <span class="skill-icon">☁️</span> Cloud & Development
+          </h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Azure</span>
+            <span class="skill-badge">Azure Data Factory</span>
+            <span class="skill-badge">Azure Synapse</span>
+            <span class="skill-badge">Azure Functions</span>
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">REST APIs</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">HTML/CSS</span>
+          </div>
+        </div>
 
-    <section id="home" class="hero">
-      <h2>Portfolio</h2>
+        <!-- Collaboration Tools -->
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <span class="skill-icon">🤝</span> Collaboration Tools
+          </h3>
+          <div class="skill-badges">
+            <span class="skill-badge">Microsoft Teams</span>
+            <span class="skill-badge">SharePoint</span>
+            <span class="skill-badge">Power Automate</span>
+            <span class="skill-badge">Jira</span>
+            <span class="skill-badge">Confluence</span>
+            <span class="skill-badge">Slack</span>
+            <span class="skill-badge">Azure DevOps</span>
+            <span class="skill-badge">GitHub</span>
+          </div>
+        </div>
 
-      <p>
-        Portfolio prezentujące projekty z zakresu Systemów Informacji
-        Przestrzennej, analiz GIS, geoinformatyki oraz kartografii.
-        Zawiera wybrane realizacje wykonane podczas studiów oraz projektów własnych.
-      </p>
+      </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projekty">
-      <h2 class="section-title">Wybrane Projekty</h2>
-      <div class="projects">
-
-      <!-- PROJECT 4 -->
-        <div class="card" onclick="openModal(4)" style="cursor:pointer;">
-          <img src="./images/4/qfield.jpg" alt="projekt">
-          <div class="card-content">
-            <h3>Mobilny system gromadzenia i wizualizacji danych z zakresu społecznego monitoringu wód podziemnych</h3>
-            <p>
-              Desktopowo-mobilny system gromadzenia i wizualizacji danych w zakresie społecznego monitoringu wód podziemnych. System powstał w ramach mojej pracy
-              inżynierskiej, ocenionej na 5.5. 
-            </p>
-            <div class="tags">
-              <div class="tag">QGIS</div>
-              <div class="tag">QField</div>
-              <div class="tag">QFieldCloud</div>
-              <div class="tag">GeoPackage</div>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">Get In Touch</h2>
+      
+      <div class="contact-grid">
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:your.email@example.com">your.email@example.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <span class="contact-icon">💼</span>
+            <div>
+              <h4>LinkedIn</h4>
+              <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <span class="contact-icon">📊</span>
+            <div>
+              <h4>GitHub</h4>
+              <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
             </div>
           </div>
         </div>
 
-        <!-- PROJECT 2 -->
-        <div class="card" onclick="openModal(2)" style="cursor:pointer;">
-          <img src="./images/2/geogleba.png" alt="projekt">
-          <div class="card-content">
-            <h3>System geoankiet dla gospodarstw rolnych</h3>
-            <p>
-              Zintegrowane rozwiązanie GIS oparte na bazie PostgreSQL/PostGIS oraz wtyczce QGIS, umożliwiające zbieranie, zarządzanie i analizę danych przestrzennych z gospodarstw rolnych wraz z automatycznym raportowaniem i obliczaniem wskaźników środowiskowych.
-            </p>
-            <div class="tags">
-              <div class="tag">PostgreSQL</div>
-              <div class="tag">PostGIS</div>
-              <div class="tag">QGIS</div>
-              <div class="tag">Python</div>
-              <div class="tag">SQL</div>
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
             </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 1 -->
-        <div class="card" onclick="openModal(1)" style="cursor:pointer;">
-          <img src="./images/1/web.png" alt="projekt">
-          <div class="card-content">
-            <h3>Interaktywna mapa szlaków turystycznych</h3>
-            <p>
-              Interaktywna aplikacja WebGIS prezentująca szlaki turystyczne z wizualizacją 3D terenu, obsługą warstw oraz narzędziami pomiaru i generowania wydruku.
-            </p>
-            <div class="tags">
-              <div class="tag">MapLibre</div>
-              <div class="tag">JavaScript</div>
-              <div class="tag">HTML/CSS</div>
-              <div class="tag">GeoJSON</div>
-              <div class="tag">WebGIS</div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
             </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 3 -->
-        <div class="card" onclick="openModal(3)" style="cursor:pointer;">
-          <img src="./images/3/mzp.jpg" alt="projekt">
-          <div class="card-content">
-            <h3>Geoportal Tereny zalewowe na terenie Wrocławia i okolic</h3>
-            <p>
-              Mapa prezentuje szczegółowe informacje na temat obszarów<br>narażonych na zalania w powiecie wrocławskim oraz samym Wrocławiu.<br>Na mapie znajdują się różnorodne warstwy, które pomagają w zrozumieniu<br>zagrożeń powodziowych oraz infrastruktury tego regionu.
-            </p>
-            <div class="tags">
-              <div class="tag">Leaflet</div>
-              <div class="tag">JavaScript</div>
-              <div class="tag">HTML/CSS</div>
-              <div class="tag">WMS (MapServer / GeoServer)</div>
-              <div class="tag">GeoJSON</div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
             </div>
-          </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          </form>
         </div>
-        </div>
+
       </div>
     </section>
 
-    <!-- SKILLS -->
-
-    <section id="umiejetnosci">
-      <h2 class="section-title">Umiejętności</h2>
-      <div class="about-box">
-        <p>
-          • ArcGIS Pro <br><br>
-          • QGIS / QField <br><br>
-          • Python w GIS / PyQGIS <br><br>
-          • SQL / PostGIS <br><br>
-          • Analizy przestrzenne <br><br>
-          • Kartografia i wizualizacja danych <br><br>
-          • JavaScript <br><br>
-          • Github <br><br>
-          • Analizy przestrzenne i modelowanie danych GIS <br><br>
-          • WebGIS (Leaflet, MapLibre, Lizmap) <br><br>
-          • Usługi OGC (WMS / WFS) <br><br>
-          • Projektowanie baz danych przestrzennych <br><br>
-          • Przetwarzanie i integracja danych przestrzennych <br><br>
-          • Systemy mobilnego GIS (QField / MerginMaps) <br><br>
-          • HTML5 / CSS3 <br><br>
-        </p>
-      </div>
-    </section>
-
-
-    <section id="omnie">
-      <h2 class="section-title">O mnie</h2>
-      <div class="about-box">
-        <p>
-          Jestem studentką studiów magisterskich na kierunku Geodezja i Kartografii na specjalizacji
-          Systemy Informacji Przestrzennej. Interesuję się analizami GIS,
-          geoinformatyką, automatyzacją procesów przestrzennych oraz tworzeniem
-          aplikacji webowych związanych z danymi przestrzennymi.
-        </p>
-      </div>
-    </section>
-
-
-    <section id="kontakt">
-      <h2 class="section-title">Kontakt</h2>
-      <div class="about-box">
-        <p>
-          📧 agnieszka.pawlaczek.stud@pw.edu.pl <br><br>
-          🌍 
-          <a href="https://www.linkedin.com/in/agnieszka-pawlaczek-347944231/" target="_blank" style="color:#38bdf8;">
-            LinkedIn
-          </a> 
-          / 
-          <a href="https://github.com/apawlaczek" target="_blank" style="color:#38bdf8;">
-            GitHub
-          </a>
-          <br><br>
-          📍 Warszawa, Polska
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 Portfolio SIP | Agnieszka Pawlaczek
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Your Name | Data Analyst / BI Developer</p>
     </footer>
 
   </main>
 
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Interaktywna mapa szlaków turystycznych</h2>
-      <p>
-        Projekt polegał na analizie dostępności komunikacji miejskiej w wybranym obszarze miejskim
-        z wykorzystaniem narzędzi ArcGIS Pro oraz danych OpenStreetMap.
-      </p>
-      <h3>Zakres pracy:</h3>
-      <ul>
-        <li>analiza sieci transportowej</li>
-        <li>wyznaczanie izochron czasowych</li>
-        <li>analiza dostępności przystanków</li>
-        <li>opracowanie map wynikowych</li>
-      </ul>
-
-      <h3>Technologie:</h3>
-      <div class="tags">
-        <div class="tag">ArcGIS Pro</div>
-        <div class="tag">Network Analyst</div>
-        <div class="tag">OpenStreetMap</div>
-      </div>
-    </div>
-  </div>
-  <script>
-    function openModal(id){
-      const modal = document.getElementById("modal");
-      let content = "";
-      if(id === 1){
-        currentProjectFolder = "1";
-        currentImagePrefix = "web";
-        content = `
-          <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Interaktywna mapa szlaków turystycznych</h2>
-            <div class="slider">
-              <button onclick="prevImg()">‹</button>
-              <div class="slider-img-wrapper">
-                <img id="sliderImg" src="./images/1/web_1.png" />
-              </div>
-              <button onclick="nextImg()">›</button>
-            </div>
-            <p>
-              Projekt obejmował stworzenie interaktywnej aplikacji WebGIS prezentującej dane turystyczne, takie jak szlaki turystyczne, ścieżki dydaktyczne oraz obszary objęte programem „Zanocuj w lesie” wraz z wizualizacją 3D terenu.
-            </p>
-            <p>  
-              Portal web umożliwia prezentację mapy pod różnym kątem poprzez <b>zmianę nachylenia widoku</b>, co pozwala na lepsze postrzeganie rzeźby terenu.
-            </p>
-            <p>
-              Dodatkowymi funkcjonalnościami serwisu są <b>drukowanie aktualnego widoku mapy</b> oraz <b>wykonywanie pomiarów na mapie</b>, w tym <b>obliczanie odległości pomiędzy wskazanymi punktami</b>.
-            </p>
-            <p>
-              Aplikacja została wykonana z wykorzystaniem biblioteki MapLibre oraz technologii JavaScript, HTML i CSS. 
-            </p>
-
-            <h3>Funkcjonalności aplikacji:</h3>
-            <ul>
-              <li>prezentacja szlaków pieszych, rowerowych i konnych,</li>
-              <li>wizualizacja punktów widokowych oraz obszarów „Zanocuj w lesie”,</li>
-              <li>obsługa różnych podkładów mapowych (OpenStreetMap, DTM w stylu ortofotomapy, mapa topograficzna),</li>
-              <li>widok ukośny i wizualizacja 3D terenu,</li>
-              <li>narzędzie pomiaru odległości na mapie,</li>
-              <li>drukowanie aktualnego widoku mapy,</li>
-              <li>interaktywne okna popup i dynamiczne sterowanie warstwami.</li>
-            </ul>
-            <p><b>Technologie:</b></p>
-
-            <div class="tags">
-              <div class="tag">MapLibre</div>
-              <div class="tag">JavaScript</div>
-              <div class="tag">HTML/CSS</div>
-              <div class="tag">GeoJSON</div>
-              <div class="tag">WebGIS</div>
-            </div>
-          </div>
-        `;
-      }
-      if(id === 2){
-        currentProjectFolder = "2";
-        currentImagePrefix = "geogleba";
-        content = `
-          <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>System geoankiet dla gospodarstw rolnych</h2>
-            <div class="slider">
-              <button onclick="prevImg()">‹</button>
-              <div class="slider-img-wrapper">
-                <img id="sliderImg" src="./images/2/geogleba_1.png" />
-              </div>
-              <button onclick="nextImg()">›</button>
-            </div>
-            <p>
-              Projekt obejmował zaprojektowanie i implementację kompletnego systemu informacji przestrzennej
-              wspierającego zbieranie i analizę danych ankietowych w gospodarstwach rolnych.
-            </p>
-
-            <p>
-              System został zrealizowany w architekturze <b>PostgreSQL + PostGIS</b> jako baza danych przestrzennych
-              oraz <b>wtyczki QGIS</b> pełniącej rolę interfejsu użytkownika.
-            </p>
-
-            <h3>Zakres funkcjonalny wtyczki QGIS:</h3>
-            <ul>
-              <li>dodawanie nowych geoankiet</li>
-              <li>import danych z plików XLSX / CSV</li>
-              <li>generowanie raportów emisji w uprawach</li>
-              <li>filtrowanie geoankiet po atrybutach</li>
-              <li>drukowanie formularzy ankiet</li>
-              <li>panel administracyjny</li>
-            </ul>
-            <h3>Baza danych (PostGIS):</h3>
-            <ul>
-              <li>tabele gospodarstw, działek, ankiet i nawozów</li>
-              <li>relacje przestrzenne (POINT / POLYGON)</li>
-              <li>klasa asocjacyjna dla zużycia nawozów</li>
-              <li>zapytania SQL do analiz przestrzennych</li>
-            </ul>
-
-            <h3>Cel projektu:</h3>
-            <p>
-              Celem było stworzenie spójnego systemu do zarządzania danymi terenowymi,
-              umożliwiającego analizę przestrzenną oraz automatyzację obliczeń środowiskowych
-              (np. szacowanie emisji w produkcji rolniczej).
-            </p>
-            <p><b>Technologie:</b></p>
-            <div class="tags">
-              <div class="tag">PostgreSQL</div>
-              <div class="tag">PostGIS</div>
-              <div class="tag">QGIS</div>
-              <div class="tag">Python</div>
-              <div class="tag">SQL</div>
-            </div>
-          </div>
-        `;
-      }
-      if(id === 3){
-        currentProjectFolder = "3";
-        currentImagePrefix = "mzp";
-        content = `
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-
-          <h2>Mapa zagrożeń powodziowych – Wrocław i okolice</h2>
-
-          <div class="slider">
-            <button onclick="prevImg()">‹</button>
-            <div class="slider-img-wrapper">
-              <img id="sliderImg" src="./images/3/mzp_1.png" />
-            </div>
-            <button onclick="nextImg()">›</button>
-          </div>
-
-          <p>
-            Projekt obejmował stworzenie interaktywnej aplikacji WebGIS prezentującej obszary zagrożenia powodziowego na terenie Wrocławia i okolic.
-            System integruje dane przestrzenne dotyczące prawdopodobieństwa wystąpienia powodzi (0,2%, 1% oraz 10%), a także dodatkowe warstwy tematyczne.
-          </p>
-
-          <p>
-            Aplikacja umożliwia analizę wielu źródeł danych GIS poprzez usługi <b>WMS</b> udostępniane z serwerów MapServer oraz GeoServer.
-            Użytkownik może przełączać warstwy tematyczne, takie jak zabudowa, rzeki, powiaty czy historyczne zdarzenia powodziowe.
-          </p>
-
-          <p>
-            Istotną funkcjonalnością jest prezentacja danych w formie interaktywnej mapy z możliwością włączania i wyłączania warstw,
-            a także dynamiczne wyświetlanie legend zależnych od aktywnej warstwy.
-          </p>
-
-          <p>
-            Aplikacja została rozszerzona o narzędzia analityczne, takie jak <b>rysowanie obiektów na mapie</b>,
-            <b>wyświetlanie współrzędnych kursora</b> oraz <b>lokalizacja użytkownika</b> z automatycznym oznaczeniem pozycji.
-          </p>
-
-          <p>
-            Dodatkowo wykorzystano mechanizm klasteryzacji punktów oraz markery z dokumentacją fotograficzną
-            przedstawiającą skutki powodzi z różnych lat.
-          </p>
-
-          <p>
-            Projekt został wykonany z wykorzystaniem biblioteki <b>Leaflet</b> oraz technologii JavaScript, HTML i CSS,
-            z integracją usług GIS (WMS) oraz rozszerzeń Leaflet Draw i MarkerCluster.
-          </p>
-
-          <h3>Funkcjonalności aplikacji:</h3>
-          <ul>
-            <li>prezentacja stref zagrożenia powodziowego (0,2%, 1%, 10%),</li>
-            <li>integracja danych WMS z MapServer i GeoServer,</li>
-            <li>warstwy tematyczne: rzeki, zabudowa, powiaty, podtopienia, wały przeciwpowodziowe,</li>
-            <li>dynamiczne legendy zależne od aktywnych warstw,</li>
-            <li>narzędzie rysowania obiektów (Leaflet Draw),</li>
-            <li>wyświetlanie współrzędnych kursora myszy,</li>
-            <li>lokalizacja użytkownika na mapie,</li>
-            <li>markery ze zdjęciami dokumentującymi powodzie,</li>
-            <li>przełączanie map podkładowych (OSM, CartoDB, satelita).</li>
-          </ul>
-
-          <p><b>Technologie:</b></p>
-
-          <div class="tags">
-            <div class="tag">Leaflet</div>
-            <div class="tag">JavaScript</div>
-            <div class="tag">HTML/CSS</div>
-            <div class="tag">WMS (MapServer / GeoServer)</div>
-            <div class="tag">GeoJSON</div>
-            <div class="tag">WebGIS</div>
-          </div>
-        </div>
-        `;
-      }
-      if(id === 4){
-        currentProjectFolder = "4";
-        currentImagePrefix = "qfield";
-        content = `
-          <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Mobilny system gromadzenia i wizualizacji danych z zakresu społecznego monitoringu wód podziemnych</h2>
-            <div class="slider">
-              <button onclick="prevImg()">‹</button>
-              <div class="slider-img-wrapper">
-                <img id="sliderImg" src="./images/4/qfield_1.png" />
-              </div>
-              <button onclick="nextImg()">›</button>
-            </div>
-
-            <p>
-              Praca inżynierska obejmowała opracowanie systemu wspierającego społeczny monitoring wód podziemnych
-              z wykorzystaniem oprogramowania OpenSource <b>QGIS</b> oraz aplikacji mobilnej <b>QField</b>.
-              Celem rozwiązania było zaangażowanie lokalnych społeczności w proces zbierania danych terenowych
-              oraz zwiększenie świadomości ekologicznej dotyczącej ochrony zasobów wodnych.
-            </p>
-
-            <p>
-              System został zaprojektowany w oparciu o koncepcję Citizen Science, umożliwiając użytkownikom
-              intuicyjne pozyskiwanie, wprowadzanie oraz wizualizację danych geoprzestrzennych bez konieczności
-              zaawansowanej wiedzy GIS.
-            </p>
-
-            <p>
-              Kluczowym elementem projektu było opracowanie punktowej warstwy pomiarowej wód podziemnych
-              wraz z rozbudowanym formularzem atrybutowym, umożliwiającym intuicyjne i kontrolowane
-              wprowadzanie danych terenowych. Formularz został dostosowany do potrzeb użytkowników
-              poprzez walidację danych, pola wyboru oraz interaktywne zależności między atrybutami.
-            </p>
-
-            <p>
-              Projekt został rozszerzony o możliwość raportowania danych, przygotowanie układów wydruku
-              oraz integrację z usługą QFieldCloud, która umożliwia synchronizację danych pomiędzy
-              środowiskiem QGIS a urządzeniami mobilnymi.
-            </p>
-
-            <p>
-              Stworzone rozwiązanie pozwala na prowadzenie mobilnych badań terenowych, wizualizację danych
-              oraz ich bieżącą aktualizację. System wspiera działania naukowe oraz edukacyjne,
-              promując jednocześnie ochronę środowiska i odpowiedzialne zarządzanie zasobami wodnymi.
-            </p>
-
-            <h3>Funkcjonalności systemu:</h3>
-            <ul>
-              <li>zbieranie danych terenowych dotyczących wód podziemnych,</li>
-              <li>projektowanie i edycja formularzy atrybutowych w QGIS,</li>
-              <li>dodawanie zdjęć i załączników do obiektów,</li>
-              <li>mobilna edycja danych w aplikacji QField,</li>
-              <li>synchronizacja danych przez QFieldCloud,</li>
-              <li>wizualizacja danych geoprzestrzennych w środowisku GIS,</li>
-              <li>walidacja i kontrola danych wejściowych,</li>
-              <li>tworzenie map i układów wydruku,</li>
-              <li>wspieranie idei Citizen Science i pracy społecznej.</li>
-            </ul>
-
-            <p><b>Technologie:</b></p>
-
-            <div class="tags">
-              <div class="tag">QGIS</div>
-              <div class="tag">QField</div>
-              <div class="tag">QFieldCloud</div>
-              <div class="tag">GeoPackage</div>
-            </div>
-          </div>
-        `;
-      }
-      modal.innerHTML = content;
-      modal.style.display = "flex";
-    }
-    
-    function closeModal(){
-      document.getElementById("modal").style.display = "none";
-    }
-    window.onclick = function(event){
-      const modal = document.getElementById("modal");
-      if(event.target == modal){
-        modal.style.display = "none";
-      }
-    }
-    let currentImg = 1;
-    const maxImg = 5;
-    function updateImg(){
-      const img = document.getElementById("sliderImg");
-      img.src = `./images/${currentProjectFolder}/${currentImagePrefix}_${currentImg}.png`;
-    }
-
-    function nextImg(){
-      if(currentImg < maxImg){
-        currentImg++;
-      } else {
-        currentImg = 1;
-      }
-      updateImg();
-    }
-
-    function prevImg(){
-      if(currentImg > 1){
-        currentImg--;
-      } else {
-        currentImg = maxImg;
-      }
-      updateImg();
-    }
-  </script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>

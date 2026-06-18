@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Projects | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- FIXED TOP NAVIGATION -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="nav-brand"><a href="index.html" style="text-decoration: none; color: inherit;">Portfolio</a></div>
+      <div class="nav-links">
+        <a href="index.html#hero" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#featured" class="nav-link">Projects: Featured</a>
+        <a href="#" class="nav-link active">All Projects</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <h1 class="page-title">All Projects</h1>
+      <p class="page-subtitle">Explore my complete portfolio of data analytics and development projects</p>
+    </section>
+
+    <!-- PROFESSIONAL PROJECTS SECTION -->
+    <section class="all-projects-section">
+      <h2 class="section-title">Professional Projects</h2>
+
+      <!-- Excel Category -->
+      <div class="project-category">
+        <h3 class="category-title">
+          <span class="category-icon">📊</span> Excel
+        </h3>
+        <div class="project-grid">
+          
+          <!-- Excel Project 1 - Add more projects by copying this card structure -->
+          <div class="project-card" data-project="excel-1">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Excel Project 1">
+            </div>
+            <div class="project-info">
+              <h4>Budget Tracking Dashboard</h4>
+              <p>Interactive Excel dashboard for department budget monitoring with automated variance analysis.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Excel</span>
+                <span class="tech-tag">VBA</span>
+                <span class="tech-tag">Pivot Tables</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('excel-1')">View Project</button>
+            </div>
+          </div>
+
+          <!-- Excel Project 2 -->
+          <div class="project-card" data-project="excel-2">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Excel Project 2">
+            </div>
+            <div class="project-info">
+              <h4>Inventory Management System</h4>
+              <p>Automated inventory tracking with reorder alerts and supplier performance metrics.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Excel</span>
+                <span class="tech-tag">Power Query</span>
+                <span class="tech-tag">Macros</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('excel-2')">View Project</button>
+            </div>
+          </div>
+
+          <!-- Excel Project 3 -->
+          <div class="project-card" data-project="excel-3">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Excel Project 3">
+            </div>
+            <div class="project-info">
+              <h4>Sales Forecasting Model</h4>
+              <p>Statistical forecasting model using historical data and trend analysis for sales predictions.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Excel</span>
+                <span class="tech-tag">Statistics</span>
+                <span class="tech-tag">Charts</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('excel-3')">View Project</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Power BI Category -->
+      <div class="project-category">
+        <h3 class="category-title">
+          <span class="category-icon">📈</span> Power BI
+        </h3>
+        <div class="project-grid">
+          
+          <!-- Power BI Project 1 - Add more projects by copying this card structure -->
+          <div class="project-card" data-project="powerbi-1">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Power BI Project 1">
+            </div>
+            <div class="project-info">
+              <h4>HR Analytics Dashboard</h4>
+              <p>Comprehensive HR metrics including turnover rates, recruitment funnel, and employee satisfaction.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">DAX</span>
+                <span class="tech-tag">SQL</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('powerbi-1')">View Project</button>
+            </div>
+          </div>
+
+          <!-- Power BI Project 2 -->
+          <div class="project-card" data-project="powerbi-2">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Power BI Project 2">
+            </div>
+            <div class="project-info">
+              <h4>Marketing Campaign Analysis</h4>
+              <p>Multi-channel marketing performance dashboard with ROI tracking and customer journey mapping.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Google Analytics</span>
+                <span class="tech-tag">API</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('powerbi-2')">View Project</button>
+            </div>
+          </div>
+
+          <!-- Power BI Project 3 -->
+          <div class="project-card" data-project="powerbi-3">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Power BI Project 3">
+            </div>
+            <div class="project-info">
+              <h4>Supply Chain Optimization</h4>
+              <p>Real-time supply chain monitoring with predictive analytics for inventory optimization.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Azure</span>
+                <span class="tech-tag">Power Automate</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('powerbi-3')">View Project</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Azure & Dev Category -->
+      <div class="project-category">
+        <h3 class="category-title">
+          <span class="category-icon">☁️</span> Azure & Development
+        </h3>
+        <div class="project-grid">
+          
+          <!-- Azure Project 1 - Add more projects by copying this card structure -->
+          <div class="project-card" data-project="azure-1">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Azure Project 1">
+            </div>
+            <div class="project-info">
+              <h4>Data Pipeline Automation</h4>
+              <p>Azure Data Factory pipelines for ETL processes with automated data quality checks.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Azure Data Factory</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Python</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('azure-1')">View Project</button>
+            </div>
+          </div>
+
+          <!-- Azure Project 2 -->
+          <div class="project-card" data-project="azure-2">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Azure Project 2">
+            </div>
+            <div class="project-info">
+              <h4>Serverless Analytics API</h4>
+              <p>Azure Functions-based API for on-demand analytics queries and report generation.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Azure Functions</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('azure-2')">View Project</button>
+            </div>
+          </div>
+
+          <!-- Azure Project 3 -->
+          <div class="project-card" data-project="azure-3">
+            <div class="project-thumbnail">
+              <img src="./images/img.jpg" alt="Azure Project 3">
+            </div>
+            <div class="project-info">
+              <h4>Cloud Data Warehouse</h4>
+              <p>Scalable data warehouse solution using Azure Synapse Analytics with dimensional modeling.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Azure Synapse</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Data Modeling</span>
+              </div>
+              <button class="btn-view-project" onclick="openProjectModal('azure-3')">View Project</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SELF-STUDY PROJECTS SECTION -->
+    <section class="all-projects-section">
+      <h2 class="section-title">Self-Study Projects</h2>
+      <div class="project-grid">
+        
+        <!-- Self-Study Project 1 - Add more projects by copying this card structure -->
+        <div class="project-card" data-project="self-1">
+          <div class="project-thumbnail">
+            <img src="./images/img.jpg" alt="Self-Study Project 1">
+          </div>
+          <div class="project-info">
+            <h4>Machine Learning Price Predictor</h4>
+            <p>Built a regression model to predict housing prices using scikit-learn and feature engineering.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Pandas</span>
+            </div>
+            <button class="btn-view-project" onclick="openProjectModal('self-1')">View Project</button>
+          </div>
+        </div>
+
+        <!-- Self-Study Project 2 -->
+        <div class="project-card" data-project="self-2">
+          <div class="project-thumbnail">
+            <img src="./images/img.jpg" alt="Self-Study Project 2">
+          </div>
+          <div class="project-info">
+            <h4>Web Scraping Dashboard</h4>
+            <p>Automated web scraping tool with visualization dashboard for competitive price monitoring.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">BeautifulSoup</span>
+              <span class="tech-tag">Streamlit</span>
+            </div>
+            <button class="btn-view-project" onclick="openProjectModal('self-2')">View Project</button>
+          </div>
+        </div>
+
+        <!-- Self-Study Project 3 -->
+        <div class="project-card" data-project="self-3">
+          <div class="project-thumbnail">
+            <img src="./images/img.jpg" alt="Self-Study Project 3">
+          </div>
+          <div class="project-info">
+            <h4>Portfolio Website</h4>
+            <p>Responsive portfolio website built with modern HTML, CSS, and JavaScript.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <button class="btn-view-project" onclick="openProjectModal('self-3')">View Project</button>
+          </div>
+        </div>
+
+        <!-- Self-Study Project 4 -->
+        <div class="project-card" data-project="self-4">
+          <div class="project-thumbnail">
+            <img src="./images/img.jpg" alt="Self-Study Project 4">
+          </div>
+          <div class="project-info">
+            <h4>Data Visualization Gallery</h4>
+            <p>Collection of interactive data visualizations using D3.js and Chart.js libraries.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">D3.js</span>
+              <span class="tech-tag">Chart.js</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <button class="btn-view-project" onclick="openProjectModal('self-4')">View Project</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECT MODAL -->
+    <div id="projectModal" class="project-modal">
+      <div class="modal-overlay" onclick="closeProjectModal()"></div>
+      <div class="modal-card">
+        <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+        
+        <div class="modal-image-carousel">
+          <button class="carousel-btn prev" onclick="prevImage()">‹</button>
+          <img id="modalImage" src="./images/img.jpg" alt="Project Image">
+          <button class="carousel-btn next" onclick="nextImage()">›</button>
+          <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+        
+        <div class="modal-content-area">
+          <h2 id="modalTitle">Project Title</h2>
+          <p id="modalDescription">Project description goes here...</p>
+          
+          <h3>Technologies Used:</h3>
+          <div class="tech-tags" id="modalTechTags"></div>
+          
+          <h3>Key Features:</h3>
+          <ul id="modalFeatures"></ul>
+          
+          <div class="modal-actions">
+            <a href="#" id="modalLiveLink" class="btn btn-primary" target="_blank">View Live</a>
+            <a href="#" id="modalGithubLink" class="btn btn-secondary" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Your Name | Data Analyst / BI Developer</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
